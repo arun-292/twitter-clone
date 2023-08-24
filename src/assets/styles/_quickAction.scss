@@ -1,0 +1,44 @@
+.quickActionButton {
+  height: 50.25px;
+  min-width: 50.25px !important;
+  width: fit-content !important;
+  padding: 12px !important;
+  border-top-left-radius: 25px !important;
+  border-top-right-radius: 25px !important;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+  .MuiButton-label {
+    width: inherit !important;
+  }
+}
+
+.svgHeight {
+  height: 26.25px !important;
+}
+
+.svgWidth {
+  width: 26.25px !important;
+}
+
+.textColor {
+  color: rgb(231, 233, 234) !important;
+}
+
+.mr-16 {
+  margin-right: 16px !important;
+}
+.ml-20 {
+  margin-left: 20px !important;
+}
+
+@media only screen and (max-width: 1004px) {
+  .extras {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .quickActionButtonText {
+    display: none;
+  }
+}
