@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 import { Variant } from '@material-ui/core/styles/createTypography';
 
-interface ICustomTypography {
+interface ICustomTypographyProps {
   children?: React.ReactNode;
   variant?: Variant;
   color?:
@@ -17,7 +17,7 @@ interface ICustomTypography {
   fontWeight?: number;
 }
 
-const CustomTypography: React.FC<ICustomTypography> = ({
+const CustomTypography: React.FC<ICustomTypographyProps> = ({
   children,
   variant,
   color,

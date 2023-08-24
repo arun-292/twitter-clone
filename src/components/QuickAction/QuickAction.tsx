@@ -1,8 +1,7 @@
 import React from 'react';
 import CustomTypography from '../CustomTypography';
-import QuickActionConfig from './QuickAction.config';
-import { Home as HomeIcon } from '@material-ui/icons';
-import { Button, Grid, Tooltip } from '@material-ui/core';
+import { QuickActionConfig } from './QuickAction.config';
+import { Button, Grid } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
 
 const QuickAction: React.FC = () => {
@@ -23,9 +22,9 @@ const QuickAction: React.FC = () => {
             onClick={() => navigate(elem.path)}
           >
             <Grid item container>
-              <HomeIcon className="textColor svgHeight svgWidth" />
+              <elem.Icon className="textColor svgHeight svgWidth" />
               <CustomTypography
-                variant="h5"
+                variant="h6"
                 color="primary"
                 fontWeight={pathname === elem.path ? 600 : 400}
                 className="quickActionButtonText mr-16 ml-20 textColor"

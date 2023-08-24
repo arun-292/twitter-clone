@@ -27,13 +27,35 @@
 .mr-16 {
   margin-right: 16px !important;
 }
+
 .ml-20 {
   margin-left: 20px !important;
 }
 
-@media only screen and (max-width: 1004px) {
-  .extras {
+.rootContent {
+  width: 990px;
+  display: flex;
+}
+
+.mainContent {
+  max-width: 600px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .subContent {
     display: none;
+  }
+  .rootContent {
+    width: 600px !important;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .subContent {
+    width: 350px;
+  }
+  .rootContent {
+    width: 920px;
   }
 }
 

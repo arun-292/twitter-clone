@@ -1,19 +1,19 @@
 import React from 'react';
-import CustomTypography from '../CustomTypography/CustomTypography';
 import { Grid } from '@material-ui/core';
 
-const MainContent: React.FC = () => {
+interface IMainContentProps {
+  children: React.ReactNode[];
+}
+
+const MainContent: React.FC<IMainContentProps> = ({ children }) => {
+  console.log(children);
   return (
-    <Grid item container direction="row">
-      <Grid item>
-        <CustomTypography variant="h3" color="primary" fontWeight={600}>
-          Main Content
-        </CustomTypography>
+    <Grid item justifyContent="space-between" container direction="row" className="rootContent">
+      <Grid item className="mainContent bl br contentBorder">
+        {children[0]}
       </Grid>
-      <Grid item className="extras">
-        <CustomTypography variant="h3" color="primary" fontWeight={600}>
-          Home2
-        </CustomTypography>
+      <Grid item className="subContent">
+        {children[1]}
       </Grid>
     </Grid>
   );

@@ -1,5 +1,32 @@
 @import url('./_quickAction.scss');
+@import url('./_home.scss');
 
-.test-initial-style {
-  font-weight: 600 !important;
+.p-16 {
+  padding: 16px !important;
+}
+
+.contentBorder {
+  border-color: rgb(47, 51, 54);
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+.bl {
+  border-left-width: 1px;
+}
+
+.br {
+  border-right-width: 1px;
+}
+
+.bb {
+  border-bottom-width: 1px;
+}
+
+.bt {
+  border-top-width: 1px;
+}
+
+.MuiButton-label {
+  text-transform: none !important;
 }

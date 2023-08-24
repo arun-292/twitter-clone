@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
 import { CssBaseline, Grid, ThemeProvider, createTheme } from '@material-ui/core';
 import { Routes, Route } from 'react-router-dom';
-import QuickAction from '../QuickAction/QuickAction';
-import CustomTypography from '../CustomTypography';
-import MainContent from '../MainContent/MainContent';
-
-const about = () => {
-  return (
-    <CustomTypography variant="h3" color="primary" className="test-initial-style">
-      about
-    </CustomTypography>
-  );
-};
-
-const contact = () => {
-  return (
-    <CustomTypography variant="h3" color="primary" className="test-initial-style">
-      contacts
-    </CustomTypography>
-  );
-};
+import QuickAction from '../QuickAction';
+import Explore from '../Explore';
+import Notifications from '../Notifications';
+import Messages from '../Messages';
+import Lists from '../Lists';
+import Bookmarks from '../Bookmarks';
+import Communities from '../Communities';
+import Verified from '../Verified';
+import Profile from '../Profile';
+import Loader from '../Loader';
+import Home from '../Home';
 
 const App = () => {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState<boolean>(true);
@@ -55,9 +47,16 @@ const App = () => {
         </Grid>
         <Grid item>
           <Routes>
-            <Route path="/" Component={MainContent} />
-            <Route path="/about" Component={about} />
-            <Route path="/contact" Component={contact} />
+            <Route path="/" Component={Loader} />
+            <Route path="/home" Component={Home} />
+            <Route path="/explore" Component={Explore} />
+            <Route path="/notifications" Component={Notifications} />
+            <Route path="/messages" Component={Messages} />
+            <Route path="/akashsolanki292/lists" Component={Lists} />
+            <Route path="/i/bookmarks" Component={Bookmarks} />
+            <Route path="/akashsolanki292/communities" Component={Communities} />
+            <Route path="/i/verified-choose" Component={Verified} />
+            <Route path="/akashsolanki292" Component={Profile} />
           </Routes>
         </Grid>
       </Grid>
