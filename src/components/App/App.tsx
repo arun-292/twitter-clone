@@ -14,7 +14,7 @@ import Loader from '../Loader';
 import Home from '../Home';
 
 const App = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState<boolean>(true);
+  const [isDarkModeEnabled] = useState<boolean>(true);
   const myTheme = createTheme({
     // Theme settings
     palette: {
