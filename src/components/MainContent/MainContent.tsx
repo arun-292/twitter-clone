@@ -6,7 +6,6 @@ interface IMainContentProps {
 }
 
 const MainContent: React.FC<IMainContentProps> = ({ children }) => {
-  console.log(children);
   return (
     <Grid item justifyContent="space-between" container direction="row" className="rootContent">
       <Grid item className="mainContent bl br contentBorder">

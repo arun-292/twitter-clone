@@ -1,15 +1,31 @@
 import { CircularProgress, Grid } from '@material-ui/core';
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 const Loader: React.FC = () => {
-  const navigation = useNavigate();
+  // const navigation = useNavigate();
+  // const [isAuthenticating, setIsAuthenticating] = useState<boolean>(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigation('/home');
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${NODE_API}/home`)
+  //     .then(async (e: Response) => {
+  //       if (e.status !== ApiStatus.SUCCESS) {
+  //         setIsAuthenticating(false);
+  //         return;
+  //       }
+  //       const data = await e.json();
+  //       if (data.valid) navigation('/home');
+  //     })
+  //     .catch((e) => {
+  //       console.error(e);
+  //     });
+  // }, []);
+
+  // if (isAuthenticating)
+  //   return (
+  //     <Grid item container alignItems="center">
+  //       <CircularProgress />
+  //     </Grid>
+  //   );
 
   return (
     <Grid item container alignItems="center">
