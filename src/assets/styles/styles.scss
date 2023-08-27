@@ -1,6 +1,7 @@
 @import url('./_quickAction.scss');
 @import url('./_home.scss');
 @import url('./_root.scss');
+@import url('./_dialog.scss');
 
 .p-16 {
   padding: 16px !important;
@@ -28,6 +29,42 @@
   border-top-width: 1px;
 }
 
+.btlr {
+  border-top-left-radius: 50% !important;
+}
+
+.btrr {
+  border-top-right-radius: 50% !important;
+}
+
+.bblr {
+  border-bottom-left-radius: 50% !important;
+}
+
+.bbrr {
+  border-bottom-right-radius: 50% !important;
+}
+
 .MuiButton-label {
   text-transform: none !important;
+}
+
+.Mui-focused {
+  .MuiOutlinedInput-notchedOutline {
+    border-color: rgb(29, 155, 240) !important;
+  }
+}
+
+.MuiFormLabel-root {
+  color: rgb(113, 118, 123) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgb(51, 54, 57) !important;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

@@ -11,6 +11,7 @@ import Verified from '../Verified';
 import Profile from '../Profile';
 import Home from '../Home';
 import Root from '../Root';
+import SignUp from '../SignUp';
 
 const App = () => {
   const [isDarkModeEnabled] = useState<boolean>(true);
@@ -31,7 +32,9 @@ const App = () => {
     <ThemeProvider theme={myTheme}>
       <CssBaseline />
       <Routes>
-        <Route path="/" Component={Root} />
+        <Route path="/" Component={Root}>
+          <Route path="/i/flow/signup" element={<SignUp />} />
+        </Route>
         <Route path="/home" Component={Home} />
         <Route path="/explore" Component={Explore} />
         <Route path="/notifications" Component={Notifications} />

@@ -15,14 +15,16 @@ interface ICustomTypographyProps {
     | 'error';
   className?: string;
   fontWeight?: number;
+  onClick?: React.MouseEventHandler<HTMLSpanElement>;
 }
 
 const CustomTypography: React.FC<ICustomTypographyProps> = ({
   children,
-  variant,
-  color,
+  variant = undefined,
+  color = undefined,
   className,
   fontWeight,
+  onClick = undefined,
 }) => {
   return (
     <Typography
@@ -30,6 +32,7 @@ const CustomTypography: React.FC<ICustomTypographyProps> = ({
       color={color}
       className={className}
       style={{ fontWeight: fontWeight || 400 }}
+      onClick={onClick}
     >
       {children}
     </Typography>
