@@ -140,6 +140,11 @@ $fontColor: rgb(231, 233, 234);
   }
 }
 
+.xLogo {
+  height: fit-content;
+  align-self: center;
+}
+
 @media only screen and (max-width: 1000px) {
   .xLogo {
     display: none !important;

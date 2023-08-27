@@ -1,6 +1,5 @@
 import React from 'react';
 import CustomTypography from '../CustomTypography/CustomTypography';
-import { Grid } from '@material-ui/core';
 import MainContent from '../MainContent/MainContent';
 
 const Communities: React.FC = () => {
