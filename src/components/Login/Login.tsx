@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import CustomDialog from '../CustomDialog';
-import { Button, TextField } from '@material-ui/core';
+import { Button, Grid, TextField } from '@material-ui/core';
 import CustomTypography from '../CustomTypography';
 import { NODE_API } from '../../config/config';
+import googleLogo from '../../assets/images/google.webp';
+import appleLogo from '../../assets/images/apple.png';
 
 interface SignUpProps {}
 
@@ -13,14 +15,14 @@ type UserDetails = {
   password: string;
 };
 
-const SignUp: React.FC<SignUpProps> = () => {
+const Login: React.FC<SignUpProps> = () => {
   const [userDetails, setUserDetails] = useState<UserDetails>({
     name: '',
     phone: '',
     email: '',
     password: '',
   });
-  const [isEmailSelected, setIsEmailSelected] = useState<boolean>(false);
+  const [isEmailSelected] = useState<boolean>(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {
@@ -32,16 +34,6 @@ const SignUp: React.FC<SignUpProps> = () => {
         [name]: value,
       };
     });
-  };
-
-  const updateSignUpType = () => {
-    setUserDetails((prev) => {
-      return {
-        ...prev,
-        [isEmailSelected ? 'email' : 'phone']: '',
-      };
-    });
-    setIsEmailSelected((prev) => !prev);
   };
 
   const handleSubmit = () => {
@@ -77,11 +69,22 @@ const SignUp: React.FC<SignUpProps> = () => {
     return (
       <>
         <CustomTypography variant="h5" className="contentHeader" fontWeight={600}>
-          Create your account
+          Sign in to X
         </CustomTypography>
+        <Grid item container className="signInFlows">
+          <Button className="rootButton ssoButton ssoGoogle">
+            <img src={googleLogo} alt="google" width={16} />
+            Sign up with Google{' '}
+          </Button>
+          <Button className="rootButton ssoButton ssoApple">
+            <img src={appleLogo} alt="apple" width={16} />
+            Sign up with Apple{' '}
+          </Button>
+          <hr className="orDivider" title="or" />
+        </Grid>
         <TextField
           name="name"
-          label="Name"
+          label="Phone, email, or username"
           variant="outlined"
           type="text"
           className="inputField"
@@ -89,30 +92,6 @@ const SignUp: React.FC<SignUpProps> = () => {
           value={userDetails.name}
           onChange={handleChange}
           error={true}
-        />
-        <TextField
-          name={isEmailSelected ? 'email' : 'phone'}
-          label={isEmailSelected ? 'Email' : 'Phone'}
-          type={isEmailSelected ? 'text' : 'number'}
-          inputMode={isEmailSelected ? 'email' : 'numeric'}
-          variant="outlined"
-          className="inputField"
-          fullWidth
-          value={isEmailSelected ? userDetails.email : userDetails.phone}
-          onChange={handleChange}
-        />
-        <CustomTypography variant="body1" className="useEmail" onClick={updateSignUpType}>
-          Use email instead
-        </CustomTypography>
-        <TextField
-          name="password"
-          label="Password"
-          variant="outlined"
-          className="inputField"
-          type="password"
-          fullWidth
-          value={userDetails.password}
-          onChange={handleChange}
         />
       </>
     );
@@ -122,7 +101,7 @@ const SignUp: React.FC<SignUpProps> = () => {
     <CustomDialog
       headerContent={
         <CustomTypography fontWeight={600} variant="h6">
-          Sign Up
+          Login
         </CustomTypography>
       }
       mainContent={mainContent}
@@ -131,4 +110,4 @@ const SignUp: React.FC<SignUpProps> = () => {
   );
 };
 
-export default SignUp;
+export default Login;

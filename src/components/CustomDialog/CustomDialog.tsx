@@ -1,21 +1,21 @@
 import { Button, Dialog, Grid } from '@material-ui/core';
-import React from 'react';
-import CustomTypography from '../CustomTypography/CustomTypography';
+import React, { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Close } from '@material-ui/icons';
 
 interface CustomDialogProps {
-  headerName: string;
-  mainContent: React.ReactNode;
-  footerContent: React.ReactNode;
+  headerContent: ReactNode;
+  mainContent: ReactNode;
+  footerContent: ReactNode;
 }
 
 const CustomDialog: React.FC<CustomDialogProps> = ({
-  headerName,
+  headerContent,
   footerContent,
   mainContent,
 }: CustomDialogProps) => {
   const navigate = useNavigate();
+
   return (
     <Dialog open className="signUpDialog">
       <Grid item container className="customDialogRoot">
@@ -23,9 +23,7 @@ const CustomDialog: React.FC<CustomDialogProps> = ({
           <Button onClick={() => navigate('/')} className="bblr bbrr btlr btrr button">
             <Close />
           </Button>
-          <CustomTypography fontWeight={600} variant="h6">
-            {headerName}
-          </CustomTypography>
+          {headerContent}
         </Grid>
         <Grid item container alignContent="center" className="content">
           {mainContent}

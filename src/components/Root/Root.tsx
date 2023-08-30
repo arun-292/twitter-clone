@@ -46,7 +46,9 @@ const Root: React.FC<IRoot> = () => {
                 <CustomTypography fontWeight={600} className="alreadyHaveAnAccount">
                   Already have an account?
                 </CustomTypography>
-                <Button className="rootButton signin">Sign in</Button>
+                <Button className="rootButton signin" onClick={() => navigate('i/flow/login')}>
+                  Sign in
+                </Button>
               </Grid>
             </Grid>
           </Grid>
