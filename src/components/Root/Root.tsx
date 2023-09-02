@@ -6,6 +6,7 @@ import appleLogo from '../../assets/images/apple.png';
 import CustomTypography from '../CustomTypography/CustomTypography';
 import { ROOT_FOOTER_LIST } from '../../utils/constants';
 import { Outlet, useNavigate } from 'react-router-dom';
+import CustomDivider from '../CustomDivider/CustomDivider';
 
 interface IRoot {}
 
@@ -34,7 +35,7 @@ const Root: React.FC<IRoot> = () => {
                 <img src={appleLogo} alt="apple" width={16} />
                 Sign up with Apple{' '}
               </Button>
-              <hr className="orDivider" title="or" />
+              <CustomDivider title="or" extraClassName="orDivider" />
               <Button className="rootButton newAccButton" onClick={() => navigate('i/flow/signup')}>
                 Create account{' '}
               </Button>
@@ -46,7 +47,9 @@ const Root: React.FC<IRoot> = () => {
                 <CustomTypography fontWeight={600} className="alreadyHaveAnAccount">
                   Already have an account?
                 </CustomTypography>
-                <Button className="rootButton signin">Sign in</Button>
+                <Button className="rootButton signin" onClick={() => navigate('i/flow/login')}>
+                  Sign in
+                </Button>
               </Grid>
             </Grid>
           </Grid>

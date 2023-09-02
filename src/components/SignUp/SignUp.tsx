@@ -88,7 +88,6 @@ const SignUp: React.FC<SignUpProps> = () => {
           fullWidth
           value={userDetails.name}
           onChange={handleChange}
-          error={true}
         />
         <TextField
           name={isEmailSelected ? 'email' : 'phone'}
@@ -119,7 +118,15 @@ const SignUp: React.FC<SignUpProps> = () => {
   }, [userDetails, isEmailSelected]);
 
   return (
-    <CustomDialog headerName="Sign Up" mainContent={mainContent} footerContent={footerContent} />
+    <CustomDialog
+      headerContent={
+        <CustomTypography fontWeight={600} variant="h6">
+          Sign Up
+        </CustomTypography>
+      }
+      mainContent={mainContent}
+      footerContent={footerContent}
+    />
   );
 };
 

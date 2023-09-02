@@ -12,6 +12,7 @@ import Profile from '../Profile';
 import Home from '../Home';
 import Root from '../Root';
 import SignUp from '../SignUp';
+import Login from '../Login';
 
 const App = () => {
   const [isDarkModeEnabled] = useState<boolean>(true);
@@ -34,6 +35,7 @@ const App = () => {
       <Routes>
         <Route path="/" Component={Root}>
           <Route path="/i/flow/signup" element={<SignUp />} />
+          <Route path="/i/flow/login" element={<Login />} />
         </Route>
         <Route path="/home" Component={Home} />
         <Route path="/explore" Component={Explore} />
