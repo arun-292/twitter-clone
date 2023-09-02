@@ -2,6 +2,19 @@
 @import url('./_home.scss');
 @import url('./_root.scss');
 @import url('./_dialog.scss');
+@import url('./_login.scss');
+
+$fontFamily:
+  TwitterChirpExtendedHeavy,
+  Verdana,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !important;
+$fontColor: rgb(231, 233, 234);
 
 .p-16 {
   padding: 16px !important;
@@ -54,9 +67,24 @@
     border-color: rgb(29, 155, 240) !important;
   }
 }
-
 .MuiFormLabel-root {
   color: rgb(113, 118, 123) !important;
+}
+
+.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: #f44336 !important;
+}
+
+.MuiFormLabel-root.Mui-focused.Mui-error {
+  color: #f44336 !important;
+}
+
+.MuiFormLabel-root.Mui-error {
+  color: #f44336 !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: rgb(29, 155, 240) !important;
 }
 
 .MuiOutlinedInput-notchedOutline {
@@ -67,4 +95,30 @@ input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.dividerGrid {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: inherit;
+  color: $fontColor;
+  font-family: $fontFamily;
+  opacity: 0.8;
+  margin: 12px 0px;
+}
+
+.dividerGrid::before,
+.dividerGrid::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.dividerGrid:not(:empty)::before {
+  margin-right: 8px;
+}
+
+.dividerGrid:not(:empty)::after {
+  margin-left: 8px;
 }

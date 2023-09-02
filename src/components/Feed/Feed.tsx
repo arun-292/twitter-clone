@@ -1,9 +1,8 @@
-import { Button, ButtonGroup, Grid } from '@material-ui/core';
-import React, { useState } from 'react';
+import { Button, Grid } from '@material-ui/core';
+import React from 'react';
 import CustomTypography from '../CustomTypography/CustomTypography';
 
-const Feed = () => {
-  const [isFollowingFeed, setIsFollowingFeed] = useState<boolean>(false);
+const Feed: React.FC = () => {
   return (
     <>
       <Grid item container xs={12} className="contentBorder bb buttonGroup">

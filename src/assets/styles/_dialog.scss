@@ -20,6 +20,7 @@ $fontFamily:
       padding: 8px;
       color: rgb(231, 233, 234);
       font-family: $fontFamily !important;
+      display: inline-flex;
       .button {
         min-width: 30px;
         height: 35px;
@@ -49,9 +50,9 @@ $fontFamily:
     }
     .footer {
       padding: 52px 80px 26px;
+      width: inherit;
 
       .createButton {
-        width: 440px;
         height: 52px;
         border-top-left-radius: 26px;
         border-top-right-radius: 26px;

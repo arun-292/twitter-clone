@@ -88,7 +88,6 @@ const SignUp: React.FC<SignUpProps> = () => {
           fullWidth
           value={userDetails.name}
           onChange={handleChange}
-          error={true}
         />
         <TextField
           name={isEmailSelected ? 'email' : 'phone'}

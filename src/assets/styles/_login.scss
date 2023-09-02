@@ -1,0 +1,107 @@
+$fontFamily:
+  TwitterChirpExtendedHeavy,
+  Verdana,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !important;
+$fontColor: rgb(231, 233, 234);
+
+.signinContentOuterGrid {
+  padding: 0px 70px;
+  .signInButtonGrid {
+    flex-direction: row;
+
+    .signinbutton {
+      width: 300px !important;
+      height: 40px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .ssoButton {
+      background-color: rgb(255, 255, 255);
+      color: rgba(0, 0, 0, 1);
+      img {
+        margin-right: 8px;
+      }
+    }
+
+    .ssoButton:hover {
+      background-color: rgb(231, 231, 231);
+    }
+
+    .ssoGoogle {
+      font-family: 'Google Sans', arial, sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .ssoApple {
+      font-weight: 600;
+    }
+
+    .signinDivider {
+      margin-bottom: 0px;
+    }
+
+    .nextPhase {
+      margin: 8px 0px 20px 0px;
+      font-weight: 600;
+    }
+
+    .forgotPassword {
+      font-weight: 600;
+      background-color: black;
+      color: #fff;
+      border: 0.5px solid rgb(83, 100, 113);
+    }
+
+    .forgotPassword:hover {
+      background-color: rgba(239, 243, 244, 0.1);
+    }
+  }
+}
+
+.dontHaveAnAccount {
+  font-weight: 400;
+  margin-top: 40px;
+  color: rgb(113, 118, 123);
+  word-wrap: break-word;
+  font-family: $fontFamily;
+  opacity: 0.9;
+  line-height: 20px;
+  font-size: 15px;
+  a {
+    color: rgb(29, 155, 240);
+    cursor: pointer;
+    word-wrap: break-word;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.validated {
+  padding: 0px !important;
+}
+
+.signInXLogo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.validatedForgotPassword {
+  color: rgb(29, 155, 240);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.validatedForgotPassword:hover {
+  text-decoration: underline;
+}
