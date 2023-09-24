@@ -54,10 +54,7 @@ $fontFamily:
 
       .createButton {
         height: 52px;
-        border-top-left-radius: 26px;
-        border-top-right-radius: 26px;
-        border-bottom-left-radius: 26px;
-        border-bottom-right-radius: 26px;
+        border-radius: 26px;
         background-color: rgb(255, 255, 255);
         color: rgba(0, 0, 0, 1);
         font-weight: 600;

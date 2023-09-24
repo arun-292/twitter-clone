@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
-import { Routes, Route } from 'react-router-dom';
-import Explore from '../Explore';
-import Notifications from '../Notifications';
-import Messages from '../Messages';
-import Lists from '../Lists';
-import Bookmarks from '../Bookmarks';
-import Communities from '../Communities';
-import Verified from '../Verified';
-import Profile from '../Profile';
-import Home from '../Home';
-import Root from '../Root';
-import SignUp from '../SignUp';
-import Login from '../Login';
+import { CssBaseline, Grid, ThemeProvider, createTheme } from '@material-ui/core';
+import TwitterRoutes from '../TwitterRoutes';
+import { useMst } from '../../mobx/root';
+import QuickAction from '../QuickAction';
+import { observer } from 'mobx-react-lite';
+//import io from 'socket.io-client';
+//const socket = io('http://localhost:5000');
 
 const App = () => {
   const [isDarkModeEnabled] = useState<boolean>(true);
+  const {
+    auth: { token, user },
+  } = useMst();
   const myTheme = createTheme({
     // Theme settings
     palette: {
@@ -29,42 +25,30 @@ const App = () => {
     },
   });
 
+  // useEffect(() => {
+  //   socket.on('message', (message) => {
+  //     setMessages((prev) => [...prev, message]);
+  //   });
+  //   setInterval(() => {
+  //     socket.emit('sendMessage', dayjs());
+  //   }, 60000);
+  // }, []);
+
   return (
     <ThemeProvider theme={myTheme}>
       <CssBaseline />
-      <Routes>
-        <Route path="/" Component={Root}>
-          <Route path="/i/flow/signup" element={<SignUp />} />
-          <Route path="/i/flow/login" element={<Login />} />
-        </Route>
-        <Route path="/home" Component={Home} />
-        <Route path="/explore" Component={Explore} />
-        <Route path="/notifications" Component={Notifications} />
-        <Route path="/messages" Component={Messages} />
-        <Route path="/akashsolanki292/lists" Component={Lists} />
-        <Route path="/i/bookmarks" Component={Bookmarks} />
-        <Route path="/akashsolanki292/communities" Component={Communities} />
-        <Route path="/i/verified-choose" Component={Verified} />
-        <Route path="/akashsolanki292" Component={Profile} />
-      </Routes>
-      {/* <Grid item>
-        <Typography variant="h1" color="primary" className="test-initial-style">
-          Twitter/x
-        </Typography>
-        <img
-          src={xLogo}
-          style={{ filter: `${!isDarkModeEnabled ? 'invert(1)' : 'none'}` }}
-          alt="X"
-        />
-      </Grid> */}
-      {/* <Grid item container justifyContent="center">
-        <Grid item>
-          <QuickAction />
+      {
+        <Grid item container justifyContent="center">
+          <Grid item className="quick-action-main-root">
+            {token && user?._id && <QuickAction />}
+          </Grid>
+          <Grid item>
+            <TwitterRoutes />
+          </Grid>
         </Grid>
-        <Grid item></Grid>
-      </Grid> */}
+      }
     </ThemeProvider>
   );
 };
 
-export default App;
+export default observer(App);

@@ -3,6 +3,8 @@
 @import url('./_root.scss');
 @import url('./_dialog.scss');
 @import url('./_login.scss');
+@import url('./_feed.scss');
+@import url('./_quickOptions.scss');
 
 $fontFamily:
   TwitterChirpExtendedHeavy,
@@ -20,10 +22,20 @@ $fontColor: rgb(231, 233, 234);
   padding: 16px !important;
 }
 
+.pt-4 {
+  padding-top: 4px;
+}
+
 .contentBorder {
+  height: max(100vh, 100%);
   border-color: rgb(47, 51, 54);
   border-left-style: solid;
   border-right-style: solid;
+}
+
+.contentBorder2 {
+  border-color: rgb(47, 51, 54);
+  border-bottom-style: solid;
 }
 
 .bl {
@@ -121,4 +133,9 @@ input[type='number']::-webkit-outer-spin-button {
 
 .dividerGrid:not(:empty)::after {
   margin-left: 8px;
+}
+
+.MuiTab-wrapper {
+  text-transform: none !important;
+  font-weight: 600;
 }
