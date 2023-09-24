@@ -5,13 +5,16 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './assets/styles/styles.scss';
+import { MSTProvider, rootStore } from './mobx/root';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <MSTProvider value={rootStore}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </MSTProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function

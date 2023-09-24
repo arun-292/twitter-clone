@@ -3,6 +3,7 @@ import CustomTypography from '../CustomTypography';
 import { QuickActionConfig } from './QuickAction.config';
 import { Button, Grid } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
+import xLogo from '../../assets/images/x.png';
 
 const QuickAction: React.FC = () => {
   const {
@@ -12,6 +13,14 @@ const QuickAction: React.FC = () => {
   console.log('pathname == ', pathname);
   return (
     <Grid item container direction="column">
+      <Button
+        variant="text"
+        color="default"
+        className="quickActionButton x-home-icon"
+        onClick={() => navigate('/home')}
+      >
+        <img src={xLogo} width={50.4} alt="home" />
+      </Button>
       {QuickActionConfig.map((elem) => {
         return (
           <Button

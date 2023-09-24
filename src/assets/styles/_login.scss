@@ -18,10 +18,7 @@ $fontColor: rgb(231, 233, 234);
     .signinbutton {
       width: 300px !important;
       height: 40px;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-radius: 20px;
     }
 
     .ssoButton {

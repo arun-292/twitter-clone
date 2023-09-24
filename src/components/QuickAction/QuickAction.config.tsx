@@ -1,9 +1,10 @@
+import { SvgIconTypeMap } from '@material-ui/core';
+import { OverridableComponent } from '@material-ui/core/OverridableComponent';
 import {
   Home,
   HomeOutlined,
   Search,
   NotificationsOutlined,
-  NotificationsActive,
   MailOutline,
   ListAltOutlined,
   BookmarkBorderOutlined,
@@ -16,19 +17,17 @@ interface IQuickActionConfig {
   key: number;
   name: string;
   path: string;
-  Icon?: any;
-  ActiveIcon?: any;
+  Icon: OverridableComponent<SvgIconTypeMap<object, 'svg'>>;
 }
 
 export const QuickActionConfig: IQuickActionConfig[] = [
-  { key: 0, name: 'Home', path: '/home', Icon: HomeOutlined, ActiveIcon: Home },
+  { key: 0, name: 'Home', path: '/home', Icon: HomeOutlined },
   { key: 1, name: 'Explore', path: '/explore', Icon: Search },
   {
     key: 2,
     name: 'Notifications',
     path: '/notifications',
     Icon: NotificationsOutlined,
-    ActiveIcon: NotificationsActive,
   },
   { key: 3, name: 'Messages', path: '/messages', Icon: MailOutline },
   { key: 4, name: 'Lists', path: '/akashsolanki292/lists', Icon: ListAltOutlined },

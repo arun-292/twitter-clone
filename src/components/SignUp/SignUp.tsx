@@ -7,7 +7,8 @@ import { NODE_API } from '../../config/config';
 interface SignUpProps {}
 
 type UserDetails = {
-  name: string;
+  fullName: string;
+  userName: string;
   phone: string;
   email: string;
   password: string;
@@ -15,7 +16,8 @@ type UserDetails = {
 
 const SignUp: React.FC<SignUpProps> = () => {
   const [userDetails, setUserDetails] = useState<UserDetails>({
-    name: '',
+    fullName: '',
+    userName: '',
     phone: '',
     email: '',
     password: '',
@@ -45,7 +47,7 @@ const SignUp: React.FC<SignUpProps> = () => {
   };
 
   const handleSubmit = () => {
-    fetch(`${NODE_API}/signup`, {
+    fetch(`${NODE_API}/auth/signup`, {
       method: 'post',
       headers: {
         Accept: 'application/json',
@@ -63,7 +65,8 @@ const SignUp: React.FC<SignUpProps> = () => {
 
   const footerContent = useMemo(() => {
     const isDisabled =
-      !userDetails.name.length ||
+      !userDetails.userName.length ||
+      !userDetails.fullName.length ||
       userDetails.password.length < 8 ||
       (isEmailSelected ? !userDetails.email.length : !userDetails.phone.length);
     return (
@@ -80,13 +83,23 @@ const SignUp: React.FC<SignUpProps> = () => {
           Create your account
         </CustomTypography>
         <TextField
-          name="name"
+          name="fullName"
           label="Name"
           variant="outlined"
           type="text"
           className="inputField"
           fullWidth
-          value={userDetails.name}
+          value={userDetails.fullName}
+          onChange={handleChange}
+        />
+        <TextField
+          name="userName"
+          label="User Name"
+          variant="outlined"
+          type="text"
+          className="inputField"
+          fullWidth
+          value={userDetails.userName}
           onChange={handleChange}
         />
         <TextField

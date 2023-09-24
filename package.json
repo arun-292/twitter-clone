@@ -8,11 +8,16 @@
     "@types/node": "^16.18.41",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "dayjs": "^1.11.10",
+    "mobx": "^6.10.2",
+    "mobx-react-lite": "^4.0.4",
+    "mobx-state-tree": "^5.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "sass": "^1.66.1",
+    "socket.io-client": "^4.7.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

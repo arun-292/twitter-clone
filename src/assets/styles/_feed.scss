@@ -1,0 +1,93 @@
+$skycolor: rgb(29, 155, 240);
+$fontFamily:
+  TwitterChirpExtendedHeavy,
+  Verdana,
+  -apple-system,
+  BlinkMacSystemFont,
+  Segoe UI,
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !important;
+
+.add-tweet-root-grid {
+  padding: 8px 16px;
+  .add-tweet-parent-grid {
+    .profile-img {
+      margin-right: 12px;
+      padding-top: 4px;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .add-tweet-sub-grid {
+      width: 510px;
+      margin: 2px;
+      .assignment-button-border {
+        border: 0.5px solid rgb(83, 100, 113);
+        border-radius: 12px;
+      }
+      .public-button-border {
+        border-radius: 12px;
+        left: -14px;
+        .MuiSvgIcon-root {
+          width: 16px;
+          margin-right: 2px;
+        }
+      }
+      .assignment-button {
+        height: 24px;
+        margin-bottom: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        color: $skycolor;
+        font-family: $fontFamily;
+        font-size: 14px;
+      }
+      .assignment-button:hover {
+        background-color: rgba(29, 155, 240, 0.1);
+      }
+      .post-button {
+        height: 36px;
+        border-radius: 18px;
+        border: 0.5px solid rgb(83, 100, 113);
+        font-family: $fontFamily;
+        font-size: 15px;
+        background-color: $skycolor;
+        color: #fff;
+      }
+      .add-tweet {
+        width: 100%;
+        .MuiInput-root {
+          font-size: 20px;
+          padding: 12px 0px;
+        }
+      }
+      .filter-buttons {
+        color: $skycolor;
+        height: 34.2px;
+        min-width: 34.2px !important;
+        border-radius: 17.1px;
+      }
+      .action-items {
+        position: relative;
+        left: -12px;
+        padding: 12px 0px 0px 0px;
+        .MuiSvgIcon-root {
+          width: 20px;
+        }
+      }
+      .tweet-message {
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+.tweet-tabs {
+  width: 100%;
+  .MuiTabs-indicator {
+    background-color: rgb(29, 155, 240);
+    height: 4px;
+  }
+}
